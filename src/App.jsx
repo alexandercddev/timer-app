@@ -15,6 +15,9 @@ const defaultRemainingTime = {
 function App({ countdown = new Date('2022-11-25').getTime() }) {  
   const [remainingTime, seTremainingTime] = useState(defaultRemainingTime);
   const [confetti, setConfetti] = useState(false);
+
+  const imgUrl = new URL('./assets/harry-styles.png', import.meta.url).href
+
   const updateRemainingTime = (countdown) => {
     const init = getRemainingTimeUntil(countdown);
     seTremainingTime(init);
@@ -44,7 +47,7 @@ function App({ countdown = new Date('2022-11-25').getTime() }) {
         <a onClick={() => {
           setConfetti(!confetti)
         }}>
-          <img src={harry} className="logo" alt="Harry Styles" />
+          <img src={imgUrl} className="logo" alt="Harry Styles" />
         </a>
       </div>
       <h1>Harry Styles</h1>
